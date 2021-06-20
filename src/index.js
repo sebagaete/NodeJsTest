@@ -1,6 +1,5 @@
 const express = require('express');
-const operaciones = require("../util/operacion");
-const corsMiddle = require('../util/cors');
+const corsMiddle = require('./util/cors');
 
 const api = express();
 const PORT = 3001;
@@ -9,7 +8,7 @@ api.use(corsMiddle);
 
 api.get("/getAllUser",(req,resp) =>{
 
-    resp.status(200).send(user)
+    resp.status(200).send(users)
 })
 
 api.get("*",(req,resp) =>{
@@ -23,7 +22,7 @@ api.listen(PORT, () => {
 
 module.exports = api;
 
-let user = [
+let users = [
     { 
         "id":1,
         "Nombre": "Felipe Camiroaga",
